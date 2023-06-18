@@ -58,3 +58,4 @@ console.log(newComponent.getName());
 // console.log(newComponent.dataStore);
 newComponent.setState = ['some new string'];
 console.log(newComponent.data);
+//# sourceMappingURL=classes.js.map

@@ -44,3 +44,4 @@ const monthlyIncoms = {
 for (let item in monthlyIncoms) {
     console.log(`${item} => ${monthlyIncoms[item]}`);
 }
+//# sourceMappingURL=main4.js.map

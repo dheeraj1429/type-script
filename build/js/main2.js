@@ -70,3 +70,4 @@ const checkNumber = (num) => {
 };
 console.log(checkNumber('10'));
 console.log(checkNumber(10));
+//# sourceMappingURL=main2.js.map

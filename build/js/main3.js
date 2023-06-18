@@ -31,3 +31,4 @@ const yearElem = document.getElementById('year');
 const currentDate = new Date().getFullYear().toString();
 yearElem.setAttribute('date', currentDate);
 yearElem.textContent = 'this year';
+//# sourceMappingURL=main3.js.map

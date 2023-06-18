@@ -69,3 +69,4 @@ const greetFunction = function (object) {
     console.log(object, 'log from the array');
 };
 greetFunction({ name: 'dheeraj', age: 21, album: [false] });
+//# sourceMappingURL=main.js.map
