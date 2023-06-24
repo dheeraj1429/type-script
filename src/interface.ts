@@ -3,12 +3,17 @@ interface Named {
    info?: string;
 }
 
-interface Greet extends Named {
+interface Greet {
    greet(message: string): string;
    readData?(): string;
 }
 
-class PersonNew implements Greet {
+// interface Greet extends Named {
+//    greet(message: string): string;
+//    readData?(): string;
+// }
+
+class PersonNew implements Greet, Named {
    age = 20;
    info?: string | undefined;
 
@@ -30,10 +35,8 @@ class PersonNew implements Greet {
 // }
 
 let user1: Greet;
-
 user1 = new PersonNew('aman');
-
-// console.log(user1);
+// console.log('the object is created with two interface', user1);
 
 // create a type
 type addNumber = (a: number, b: number) => number;
@@ -44,15 +47,13 @@ addFn = (a: number, b: number) => a + b;
 interface Fn {
    (a: number, b: number): number;
 }
-
 let rnFn: Fn;
-
 rnFn = (a: number, b: number) => a + b;
 
 // intersection type;
 type Admin = {
    name: string;
-   privileges: string[];
+   privileges?: string[];
 };
 
 type Employee = {
@@ -68,6 +69,13 @@ const employee1: EvelatedEmployee = {
    joinDate: new Date('10-12-2000'),
 };
 
+const employee3: EvelatedEmployee = {
+   name: 'Karan singh rawat',
+   joinDate: new Date('10-12-2012'),
+};
+
+// console.log('employee3', employee3);
+
 // console.log(employee1);
 
 // if i want to create intersection type with interface then we can use interface like this.
@@ -82,6 +90,8 @@ interface EmployeeInterface {
 }
 
 interface EvelatedEmployeeInterface extends AdminOne, EmployeeInterface {}
+
+// type EvelatedEmployeeInterface = AdminOne & EmployeeInterface;
 
 const employee2: EvelatedEmployeeInterface = {
    name: 'Dheearj singh',
@@ -113,6 +123,7 @@ type UnKnownEmployee = Admin | Employee;
 const printEmployee = function (emp: UnKnownEmployee) {
    console.log('employee name', emp.name);
    if ('privileges' in emp) {
+      // we can use the in oprator in objects.
       console.log('privileges', emp.privileges);
    }
 };
@@ -144,6 +155,7 @@ const v2 = new Truck();
 const useVehical = function (vehical: Vehical): void {
    vehical.drive();
    if (vehical instanceof Truck) {
+      // instanceof is only used in the class.
       vehical.loadData('TNT');
    }
 };

@@ -1,4 +1,8 @@
 "use strict";
+// interface Greet extends Named {
+//    greet(message: string): string;
+//    readData?(): string;
+// }
 class PersonNew {
     constructor(name) {
         this.name = name;
@@ -26,6 +30,11 @@ const employee1 = {
     privileges: ['create_server'],
     joinDate: new Date('10-12-2000'),
 };
+const employee3 = {
+    name: 'Karan singh rawat',
+    joinDate: new Date('10-12-2012'),
+};
+// type EvelatedEmployeeInterface = AdminOne & EmployeeInterface;
 const employee2 = {
     name: 'Dheearj singh',
     joinDate: new Date('10-12-2000'),
@@ -47,6 +56,7 @@ console.log('result with number', addFnNew(10, 20));
 const printEmployee = function (emp) {
     console.log('employee name', emp.name);
     if ('privileges' in emp) {
+        // we can use the in oprator in objects.
         console.log('privileges', emp.privileges);
     }
 };
@@ -70,6 +80,7 @@ const v2 = new Truck();
 const useVehical = function (vehical) {
     vehical.drive();
     if (vehical instanceof Truck) {
+        // instanceof is only used in the class.
         vehical.loadData('TNT');
     }
 };
